@@ -51,7 +51,7 @@ export default function sagaFetch(...params) {
     });
   } else {
     // eslint-disable-next-line
-    console && console.warn && console.warn('not use ', args);
+    console && console.warn && console.warn('not setup fetchModal for redux-saga-fetch');
     return fetch(...params);
   }
 }
