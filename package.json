@@ -1,0 +1,38 @@
+{
+  "name": "redux-saga-fetch-hook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run umd && npm run esm",
+    "umd": "babel src -d ./dist/umd --no-babelrc --presets=env --plugins=transform-es2015-modules-umd",
+    "esm": "babel src -d ./dist/esm --no-babelrc --presets=env",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiliy/redux-saga-fetch-hook.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-saga",
+    "fetch"
+  ],
+  "author": "Weili Yi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weiliy/redux-saga-fetch-hook/issues"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "isomorphic-fetch": ">= 2"
+  },
+  "peerDependencies": {
+    "isomorphic-fetch": ">= 2"
+  },
+  "homepage": "https://github.com/weiliy/redux-saga-fetch-hook#readme"
+}
