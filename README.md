@@ -1,1 +1,5 @@
-# redux-saga-fetch
+# redux-saga-fetch-hook
+
+```
+  npm install redux-saga-fetch-hook
+```

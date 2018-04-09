@@ -30,6 +30,7 @@ export const fetchModal = ({
   subscriptions: { setUp },
   effects: {
     *[REQUEST]({ payload: params, meta: { resolve, reject } }, saga) {
+      const { put, call } = saga;
       const newParams = hook(params, saga);
 
       try {
