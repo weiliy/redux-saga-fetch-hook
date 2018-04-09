@@ -23,15 +23,16 @@ export const setUp = ({ dispatch }) => {
 }
 
 export const fetchModal = ({
-  hook = (params, saga) => params,
+  hook,
 }) => ({
   namespace: FETCH,
   state: {},
   subscriptions: { setUp },
   effects: {
-    *[REQUEST]({ payload: params, meta: { resolve, reject } }, saga) {
-      const { put, call } = saga;
-      const newParams = hook(params, saga);
+    *[REQUEST]({ payload: params, meta: { resolve, reject } }, { put, call, select }) {
+      const newParams = hook
+        ? hook(params, yield select())
+        : params;
 
       try {
         const data = yield call(fetch, ...newParams)
